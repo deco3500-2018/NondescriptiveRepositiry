@@ -4,16 +4,25 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import TrackerScreen from '../screens/TrackerScreen';
+import MonthlyTrackerScreen from '../screens/MonthlyTrackerScreen';
 import RewardScreen from '../screens/RewardScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 import DetailedAccountScreen from '../screens/DetailedAccountScreen';
-
+import PieScreen from '../screens/BarScreen';
+import BarScreen from '../screens/PieScreen';
+import StackScreen from '../screens/StackScreen';
 
 const HomeStack = createStackNavigator({
   Home: { screen: HomeScreen },
   DetailedAccount: { screen: DetailedAccountScreen },
+});
+
+const DetailedStack = createStackNavigator({
+  Home: { screen: DetailedAccountScreen },
+  Pie: { screen: PieScreen },
+  Bar: { screen: BarScreen },
+  Stack: { screen: StackScreen },
 });
 
 HomeStack.navigationOptions = {
@@ -30,12 +39,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const TrackerStack = createStackNavigator({
-  Tracker: TrackerScreen,
+const MonthlyTrackerStack = createStackNavigator({
+  MonthlyTracker: MonthlyTrackerScreen,
 });
 
-TrackerStack.navigationOptions = {
-  tabBarLabel: 'Tracker',
+MonthlyTrackerStack.navigationOptions = {
+  tabBarLabel: 'Month Tracker',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -74,7 +83,8 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  TrackerStack,
+  MonthlyTrackerStack,
   RewardStack,
   SettingsStack,
+DetailedStack,
 });

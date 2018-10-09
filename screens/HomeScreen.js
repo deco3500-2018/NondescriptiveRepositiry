@@ -61,7 +61,7 @@ export default class HomeScreen extends React.Component {
             </View>
 
         <Button
-          title="Go to your Admin Account Details"
+          title="Go to your view game usage"
           onPress={() => this.props.navigation.navigate('DetailedAccount')}
         />
 
