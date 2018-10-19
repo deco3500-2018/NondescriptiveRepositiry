@@ -37,10 +37,11 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
+ 		<Text style={styles.titleText}>{"\n"}{"\n"}GamerWatch{"\n"}</Text>
 
           <View style={styles.getStartedContainer}>
 
-            <Text style={styles.titleText}>{"\n"}{"\n"}Welcome to GamerWatch Center{"\n"}</Text>
+           
         
             <View style={styles.welcomeContainer}>
             <Image
@@ -51,20 +52,12 @@ export default class HomeScreen extends React.Component {
             />
           </View>
 
-
-            <Text style={styles.getStartedText}>The purpose of the GamerWatch center is to ensure that YOU know what your kids are playing and for how long.
-            {"\n"}
-                </Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>Do not use this application for malicous purposes {"\n"}</MonoText>
-            </View>
+            
 
         <Button
           title="Go to your view game usage"
           onPress={() => this.props.navigation.navigate('DetailedAccount')}
         />
-
             <Text style={styles.getStartedText}>
               {"\n"} Learn more below...
             </Text>
@@ -75,11 +68,16 @@ export default class HomeScreen extends React.Component {
               <Text style={styles.helpLinkText}>The basics of gaming addiction</Text>
             </TouchableOpacity>
           </View>
-        </ScrollView>
 
+          <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
+              <MonoText style={styles.codeHighlightText}>Do not use this application for malicous purposes {"\n"}</MonoText>
+            </View>
+        </ScrollView>
+        /*
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>Tap on the tabs below to get started!</Text>
         </View>
+        */
       </View>
     );
   }
@@ -99,7 +97,7 @@ const styles = StyleSheet.create({
     height: 80,
     resizeMode: 'contain',
     marginTop: 3,
-    marginLeft: -10,
+
   },
   bigblue: {
     color: 'blue',
@@ -111,7 +109,7 @@ const styles = StyleSheet.create({
   },
       container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#bfeefa',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -137,13 +135,15 @@ const styles = StyleSheet.create({
   },
   getStartedContainer: {
     alignItems: 'center',
-    marginHorizontal: 50,
+    marginHorizontal: 10,
   },
   homeScreenFilename: {
     marginVertical: 7,
   },
   codeHighlightText: {
     color: 'rgba(96,100,109, 0.8)',
+    fontSize: 12,
+    paddingHorizontal: 2,
   },
   codeHighlightContainer: {
     backgroundColor: 'rgba(0,0,0,0.05)',
@@ -157,8 +157,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
       titleText: {
-    fontSize: 24,
+    fontSize: 36,
     color: 'rgb(16, 50, 126)',
+    backgroundColor: 'rgb(27,82,255)',
     lineHeight: 24,
     textAlign: 'center',
   },
@@ -192,6 +193,7 @@ const styles = StyleSheet.create({
   },
   helpContainer: {
     marginTop: 15,
+    marginBottom: 130,
     alignItems: 'center',
   },
   helpLink: {
