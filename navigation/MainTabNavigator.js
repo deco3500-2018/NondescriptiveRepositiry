@@ -4,26 +4,60 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import MonthlyTrackerScreen from '../screens/MonthlyTrackerScreen';
+import ApprovedDaysScreen from '../screens/ApprovedDaysScreen';
 import RewardScreen from '../screens/RewardScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-import DetailedAccountScreen from '../screens/DetailedAccountScreen';
-import PieScreen from '../screens/BarScreen';
-import BarScreen from '../screens/PieScreen';
-import StackScreen from '../screens/StackScreen';
+import TimScreen from '../screens/Tim/TimScreen';
+import TTimeScreen from '../screens/Tim/TTimeScreen';
+import TGameScreen from '../screens/Tim/TGameScreen';
+import TSystemScreen from '../screens/Tim/TSystemScreen';
+
+import MaryScreen from '../screens/Mary/MaryScreen';
+import MTimeScreen from '../screens/Mary/MTimeScreen';
+import MGameScreen from '../screens/Mary/MGameScreen';
+import MSystemScreen from '../screens/Mary/MSystemScreen';
 
 const HomeStack = createStackNavigator({
   Home: { screen: HomeScreen },
-  DetailedAccount: { screen: DetailedAccountScreen },
+  Tim: { screen: TimScreen },
+  Mary: { screen: MaryScreen },
 });
 
-const DetailedStack = createStackNavigator({
-  Home: { screen: DetailedAccountScreen },
-  Pie: { screen: PieScreen },
-  Bar: { screen: BarScreen },
-  Stack: { screen: StackScreen },
+const TimStack = createStackNavigator({
+  Home: { screen: TimScreen },
+  Time: { screen: TTimeScreen },
+  System: { screen: TSystemScreen },
+  Game: { screen: TGameScreen },
 });
+
+TimStack.navigationOptions = {
+  tabBarLabel: 'Tim',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
+    />
+  ),
+};
+
+const MaryStack = createStackNavigator({
+  Home: { screen: MaryScreen },
+  MTime: { screen: MTimeScreen },
+  MSystem: { screen: MSystemScreen },
+  MGame: { screen: MGameScreen },
+});
+
+
+MaryStack.navigationOptions = {
+  tabBarLabel: 'Mary',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
+    />
+  ),
+};
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
@@ -39,12 +73,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const MonthlyTrackerStack = createStackNavigator({
-  MonthlyTracker: MonthlyTrackerScreen,
+const ApprovedDaysStack = createStackNavigator({
+  ApprovedDaysTracker: ApprovedDaysScreen,
 });
 
-MonthlyTrackerStack.navigationOptions = {
-  tabBarLabel: 'Month Tracker',
+ApprovedDaysStack.navigationOptions = {
+  tabBarLabel: 'PlayDays',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -83,8 +117,9 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  MonthlyTrackerStack,
+  ApprovedDaysStack,
   RewardStack,
+  TimStack,
+  MaryStack,
   SettingsStack,
-DetailedStack,
 });

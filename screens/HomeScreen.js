@@ -60,11 +60,6 @@ export default class HomeScreen extends React.Component {
               <MonoText style={styles.codeHighlightText}>Do not use this application for malicous purposes {"\n"}</MonoText>
             </View>
 
-        <Button
-          title="Go to your view game usage"
-          onPress={() => this.props.navigation.navigate('DetailedAccount')}
-        />
-
             <Text style={styles.getStartedText}>
               {"\n"} Learn more below...
             </Text>
@@ -75,12 +70,30 @@ export default class HomeScreen extends React.Component {
               <Text style={styles.helpLinkText}>The basics of gaming addiction</Text>
             </TouchableOpacity>
           </View>
+
+
+<View style={styles.container}>
+                    <Button
+          title="View marys gaming"
+          onPress={() => this.props.navigation.navigate('Mary')}
+        />
+
+
+        <Button
+          title="View timmys gaming"
+          onPress={() => this.props.navigation.navigate('Tim')}
+        />
+
+</View>
+
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>Tap on the tabs below to get started!</Text>
+          <Text style={styles.tabBarInfoText}>Tap on the tabs below or select a user to get started!</Text>
         </View>
+
       </View>
+
     );
   }
 }
