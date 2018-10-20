@@ -20,13 +20,18 @@ export default class TimScreen extends React.Component {
         
         <View style={styles.container}>
         
+          <View style={styles.headingContainer}>
+          <Text style={styles.headings}>Most played system</Text>
         
-        <Text>Most played system</Text>
+          <Text style={styles.headings}>Money spent</Text>
         
-        <Text>Money spent</Text>
-        
-        <Text>Most played game</Text>
-        
+          <Text style={styles.headings}>Most played game</Text>
+          </View>
+          <View style={styles.headingContainer}>
+            <Text style={styles.headingPlayed}>Xbox</Text>
+            <Text style={styles.headingSpent}>$20.00</Text>
+            <Text style={styles.headingGame}>Fortnite</Text>
+          </View>
         
   <VictoryPie
               colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
@@ -61,18 +66,18 @@ export default class TimScreen extends React.Component {
 
 
                     <Button
-          title="View total time played"
-          onPress={() => this.props.navigation.navigate('Time')}
+          title="View total time played ->"
+          onPress={() => this.props.navigation.navigate('Time')} 
         />
 
                     <Button
-          title="View Most Played games"
+          title="View Most Played games ->"
           onPress={() => this.props.navigation.navigate('Game')}
         />
 
 
         <Button
-          title="View breakdown by system"
+          title="View breakdown by system ->"
           onPress={() => this.props.navigation.navigate('System')}
         />
 </View>
@@ -88,6 +93,30 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f5fcff"
+    backgroundColor: "#b9caff",
+  },
+  headingContainer: {
+    flexDirection: 'row',
+  },
+  headings: {
+    marginHorizontal: 5,
+    backgroundColor: 'white',
+  },
+  headingPlayed: {
+    marginLeft: 1,
+    marginRight: 9.75,
+    paddingHorizontal: 47.75,
+    backgroundColor: 'white',
+  },
+  headingSpent: {
+    marginLeft: 0.5,
+    marginRight: 9,
+    paddingHorizontal: 19,
+    backgroundColor: 'white',
+  },
+  headingGame: {
+    marginLeft: 0.5,
+    paddingHorizontal: 34,
+    backgroundColor: 'white',
   }
 });
