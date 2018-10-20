@@ -19,12 +19,15 @@ export default class MaryScreen extends React.Component {
         
         
         <View style={styles.container}>
+
+        <View>
         
-        <Text>Most played system</Text>
+          <Text  style={styles.textContainer}>Most played system: XBox</Text>
         
-        <Text>Money spent</Text>
+          <Text  style={styles.textContainer}>Money spent: $20.00</Text>
         
-        <Text>Most played game</Text>
+          <Text  style={styles.textContainer}>Most played game: Fortnite</Text>
+        </View>
   <VictoryPie
               colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
     events={[{
@@ -85,6 +88,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#b9caff"
+    backgroundColor: "#b9caff",
+  },
+  textContainer: {
+    marginRight: 120,
+    fontSize: 20
   }
 });
