@@ -37,11 +37,8 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-
-          <View style={styles.getStartedContainer}>
-
-            <Text style={styles.titleText}>{"\n"}{"\n"}Welcome to GamerWatch Center{"\n"}</Text>
-        
+          <Text style={styles.titleText}>{"\n"}{"\n"}Gamerwatch{"\n"}</Text>
+          
             <View style={styles.welcomeContainer}>
             <Image
               source={
@@ -51,47 +48,26 @@ export default class HomeScreen extends React.Component {
             />
           </View>
 
-
-            <Text style={styles.getStartedText}>The purpose of the GamerWatch center is to ensure that YOU know what your kids are playing and for how long.
-            {"\n"}
-                </Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>Do not use this application for malicous purposes {"\n"}</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-              {"\n"} Learn more below...
-            </Text>
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._basics} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>The basics of gaming addiction</Text>
-            </TouchableOpacity>
-          </View>
-
+          
 
 <View style={styles.container}>
-                    <Button
-          title="View marys gaming"
-          onPress={() => this.props.navigation.navigate('Mary')}
+
+        <View style={styles.buttonContainer}>
+          <Button title="Mary"
+            onPress={() => this.props.navigation.navigate('Mary')}
         />
+        </View>
 
-
+        <View style={styles.buttonContainer}>
         <Button
-          title="View timmys gaming"
+          title="Timmy"
           onPress={() => this.props.navigation.navigate('Tim')}
         />
+        </View>
 
 </View>
 
         </ScrollView>
-
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>Tap on the tabs below or select a user to get started!</Text>
-        </View>
-
       </View>
 
     );
@@ -124,7 +100,7 @@ const styles = StyleSheet.create({
   },
       container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#BCE0FD',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -150,18 +126,9 @@ const styles = StyleSheet.create({
   },
   getStartedContainer: {
     alignItems: 'center',
-    marginHorizontal: 50,
   },
   homeScreenFilename: {
     marginVertical: 7,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
   },
   getStartedText: {
     fontSize: 17,
@@ -170,10 +137,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
       titleText: {
-    fontSize: 24,
-    color: 'rgb(16, 50, 126)',
+    fontSize: 40,
+    color: 'white',
     lineHeight: 24,
     textAlign: 'center',
+    backgroundColor: '#2699FB',
+    paddingHorizontal: 75,
   },
   tabBarInfoContainer: {
     position: 'absolute',
@@ -213,5 +182,14 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  buttonContainer: {
+    borderWidth: 5,
+    borderColor: '#2699FB',
+    backgroundColor: '#fff',
+    marginHorizontal: 30,
+    marginBottom: 20,
+    paddingVertical: 20,
+    borderRadius: 20,
   },
 });
