@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Text, View, StyleSheet } from 'react-native';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryPie } from "victory-native";
+import { Image, Platform, ScrollView, AppRegistry, TouchableOpacity,  } from 'react-native';
 
 const sampleData = [
   { quarter: 1, earnings: 13000 },
@@ -19,18 +20,14 @@ export default class TimScreen extends React.Component {
         
         
         <View style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         
-          <View style={styles.headingContainer}>
-          <Text style={styles.headings}>Most played system</Text>
+          <View>
+          <Text style={styles.textContainer}>Most played system:                                PC</Text>
         
-          <Text style={styles.headings}>Money spent</Text>
+          <Text style={styles.textContainer}>Money spent:                                     $75.00</Text>
         
-          <Text style={styles.headings}>Most played game</Text>
-          </View>
-          <View style={styles.headingContainer}>
-            <Text style={styles.headingPlayed}>Xbox</Text>
-            <Text style={styles.headingSpent}>$20.00</Text>
-            <Text style={styles.headingGame}>Fortnite</Text>
+          <Text style={styles.textContainer}>Most played game:                             PUBG</Text>
           </View>
         
   <VictoryPie
@@ -64,22 +61,26 @@ export default class TimScreen extends React.Component {
   />
 
 
-
+                    <View style={styles.buttonContainer}>
                     <Button
-          title="View total time played ->"
+          title="View total time played"
           onPress={() => this.props.navigation.navigate('Time')} 
         />
-
+        </View>
+                  <View style={styles.buttonContainer}>
                     <Button
-          title="View Most Played games ->"
+          title="View Most Played games"
           onPress={() => this.props.navigation.navigate('Game')}
         />
+        </View>
 
-
+        <View style={styles.buttonContainer}>
         <Button
-          title="View breakdown by system ->"
+          title="View breakdown by system"
           onPress={() => this.props.navigation.navigate('System')}
         />
+        </View>
+    </ScrollView>
 </View>
       
       
@@ -91,32 +92,30 @@ export default class TimScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#b9caff",
+    backgroundColor: "#BCE0FD",
   },
-  headingContainer: {
-    flexDirection: 'row',
-  },
-  headings: {
+  textContainer: {
+    fontSize: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 5,
+    backgroundColor: 'white',
+    marginTop: 10,
+    borderWidth: 3,
+    borderColor: '#2699FB',
     marginHorizontal: 5,
-    backgroundColor: 'white',
   },
-  headingPlayed: {
-    marginLeft: 1,
-    marginRight: 9.75,
-    paddingHorizontal: 47.75,
-    backgroundColor: 'white',
+  contentContainer: {
+    justifyContent: "center",
+    alignItems: "center"
   },
-  headingSpent: {
-    marginLeft: 0.5,
-    marginRight: 9,
-    paddingHorizontal: 19,
-    backgroundColor: 'white',
+  buttonContainer: {
+    borderWidth: 5,
+    borderColor: '#2699FB',
+    backgroundColor: '#fff',
+    marginBottom: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+    width: 250,
   },
-  headingGame: {
-    marginLeft: 0.5,
-    paddingHorizontal: 34,
-    backgroundColor: 'white',
-  }
 });
