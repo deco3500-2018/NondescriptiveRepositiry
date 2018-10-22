@@ -35,14 +35,15 @@ export default class HomeScreen extends React.Component {
         
     return (
       <View style={styles.container}>
+      <Text style={styles.titleText}>{"\n"}{"\n"}Gamerwatch{"\n"}</Text>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-          <Text style={styles.titleText}>{"\n"}{"\n"}Gamerwatch{"\n"}</Text>
+          
           
             <View style={styles.welcomeContainer}>
             <Image
               source={
-                  require('../assets/images/mystery.png')
+                  require('../assets/images/App-logo.png')
               }
               style={styles.welcomeImage}
             />
@@ -67,7 +68,7 @@ export default class HomeScreen extends React.Component {
 
 </View>
 
-        </ScrollView>
+        </ScrollView> 
       </View>
 
     );
@@ -84,9 +85,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
+    width: 1000,
+    height: 500,
     marginTop: 3,
     marginLeft: -10,
   },
