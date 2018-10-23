@@ -40,23 +40,26 @@ _handleTimToggleSwitch = () => this.setState(state => ({
           
         
          <View style={styles.container}>
+         <View style={styles.textContainer}>
        <Text>Background app refresh</Text>
        <Switch
         onValueChange={this._handleRefreshToggleSwitch}
         value={this.state.refreshValue}
         />
-        
+        </View>
+        <View style={styles.textContainer}>
         <Text>Notifications</Text>
        <Switch
         onValueChange={this._handleToggleSwitch}
         value={this.state.switchValue}
         />
-        
+        </View>
+        <View style={styles.textContainer}>
         <Text>Bank accounts linked</Text>
         <Text>034-182</Text>
          <Button title="Change Linked Accounts" onPress={ ()=>{ Linking.openURL('https://banking.westpac.com.au/wbc/banking/handler?TAM_OP=login&segment=personal&logout=false')}} /> 
-
-
+        </View>
+        <View style={styles.textContainer}>
         <Text>Children Monitoring</Text>
          <Text>Mary</Text>
         
@@ -70,12 +73,20 @@ _handleTimToggleSwitch = () => this.setState(state => ({
         onValueChange={this._handleTimToggleSwitch}
         value={this.state.timValue}
         />
+        </View>
 
-
+<View style={styles.textContainer}>
 <Text>Monitor Additional Services</Text>
+        <View style={styles.buttonContainer}>
          <Button title="Add Steam API" onPress={ ()=>{ Linking.openURL('https://store.steampowered.com/stats/')}} /> 
+         </View>
+         <View style={styles.buttonContainer}>
  <Button title="Add Xbox API" onPress={ ()=>{ Linking.openURL('https://developer.microsoft.com/en-us/games/xbox/xboxlive')}} /> 
+ </View>
+ <View style={styles.buttonContainer}>
  <Button title="Add PS4 API" onPress={ ()=>{ Linking.openURL('https://blog.us.playstation.com/2018/03/12/play-time-management-and-other-ps4-tips-for-gaming-families/')}} />
+ </View>
+ </View>
                    </View>
 
 
@@ -93,25 +104,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#BCE0FD",
   },
   textContainer: {
-    fontSize: 20,
     paddingTop: 10,
     paddingBottom: 10,
-    paddingLeft: 5,
+    paddingHorizontal: 15,
     backgroundColor: 'white',
     marginTop: 10,
     borderWidth: 3,
     borderColor: '#2699FB',
-    marginHorizontal: 5,
   },
   contentContainer: {
     justifyContent: "center",
     alignItems: "center"
   },
   buttonContainer: {
-    borderWidth: 5,
+    borderWidth: 3,
     borderColor: '#2699FB',
     backgroundColor: '#fff',
-    marginBottom: 20,
+    marginTop: 20,
     paddingVertical: 10,
     borderRadius: 20,
     width: 250,

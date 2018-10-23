@@ -43,7 +43,7 @@ export default class HomeScreen extends React.Component {
             <View style={styles.welcomeContainer}>
             <Image
               source={
-                  require('../assets/images/mystery.png')
+                  require('../assets/images/App-logo.png')
               }
               style={styles.welcomeImage}
             />
@@ -89,10 +89,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 1000,
-    height: 500,
+    resizeMode: 'contain',
     marginTop: 3,
-    marginLeft: -10,
   },
   bigblue: {
     color: 'blue',
