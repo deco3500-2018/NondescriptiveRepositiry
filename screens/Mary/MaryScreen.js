@@ -14,7 +14,7 @@ const sampleData=[
 
 export default class MaryScreen extends React.Component {
   static navigationOptions = {
-    title: 'Summary of Mary gaming',
+    title: "Mary's summary",
   };
 
   render() {
@@ -57,7 +57,7 @@ export default class MaryScreen extends React.Component {
 
  <Text style={styles.textContainer}>Each days play is recorded and displayed below with the amount of time allowed remaning</Text>
   <VictoryPie
-              colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
+              colorScale={["#4d88ff", "#3377ff", "#1a66ff", "#0055ff", "#004de6" ]}
     events={[{
       target: "data",
       eventHandlers: {
@@ -67,7 +67,7 @@ export default class MaryScreen extends React.Component {
               target: "data",
               mutation: (props) => {
                 const fill = props.style && props.style.fill;
-                return fill === "#c43a31" ? null : { style: { fill: "#c43a31" } };
+                return fill === "#fff" ? null : { style: { fill: "#fff" } };
               }
             }, {
               target: "labels",
@@ -88,7 +88,7 @@ export default class MaryScreen extends React.Component {
   domainPadding={10}
 >
   <VictoryBar
-    style={{ data: { fill: "#c43a31" } }}
+    style={{ data: { fill: "#2699FB" } }}
     data={sampleData}
   />
 </VictoryChart>
@@ -123,15 +123,17 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   buttonContainer: {
-    borderWidth: 5,
+    borderWidth: 3,
     borderColor: '#2699FB',
     backgroundColor: '#fff',
     marginBottom: 20,
+    marginTop: 20,
+    marginLeft: 4,
     paddingVertical: 10,
     borderRadius: 20,
-    width: 250,
+    width: 275,
   },
 });
