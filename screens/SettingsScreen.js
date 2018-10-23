@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#ededed',
-    marginHorizontal: 15,
+    marginHorizontal: 25,
   },
   sectionHeaderText: {
     fontSize: 14,
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     paddingBottom: 12,
     paddingHorizontal: 15,
     backgroundColor: '#BCE0FD',
-    marginHorizontal: 15,
+    marginHorizontal: 25,
   },
   sectionContentText: {
     fontSize: 14,
