@@ -180,22 +180,25 @@ const styles = StyleSheet.create({
     paddingTop: 2,
   },
   sectionHeaderContainer: {
-    backgroundColor: '#fbfbfb',
+    backgroundColor: '#2699FB',
     paddingVertical: 8,
     paddingHorizontal: 15,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#ededed',
+    marginHorizontal: 15,
   },
   sectionHeaderText: {
     fontSize: 14,
+    color: 'white',
   },
   sectionContentContainer: {
     paddingTop: 8,
     paddingBottom: 12,
     paddingHorizontal: 15,
+    backgroundColor: '#BCE0FD',
+    marginHorizontal: 15,
   },
   sectionContentText: {
-    color: '#808080',
     fontSize: 14,
   },
   nameText: {
