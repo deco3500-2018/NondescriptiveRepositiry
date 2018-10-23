@@ -31,7 +31,7 @@ export default class TTimeScreen extends React.Component {
         
         <View style={styles.container}>
         
-        <Text style={styles.BottomText}>{"\n"}{"\n"}Your gaming habits average 7 hours of gametime per game{"\n"}</Text>
+        <Text style={styles.BottomText}>Your gaming habits average 7 hours of gametime per game</Text>
         
             <VictoryChart
   theme={VictoryTheme.material}
@@ -45,7 +45,7 @@ export default class TTimeScreen extends React.Component {
           
         
   <VictoryStack
-  colorScale={"heatmap"}
+  colorScale={["#003366", "#0000cd", "#4169e1", "#8470ff"]}
 
 >
         
@@ -73,7 +73,7 @@ export default class TTimeScreen extends React.Component {
         
          <View style={styles.getStartedContainer}>
 
-            <Text style={styles.BottomText}>{"\n"}{"\n"}Tim played <Text style={styles.OverText}>Overwatch</Text>, Uno, Pokemon and Roblox this week{"\n"}</Text>
+            <Text style={styles.BottomText}>Tim played <Text style={styles.OverText}>Overwatch</Text>, Uno, Pokemon and Roblox this week</Text>
         </View>
             </View>
     );
@@ -85,16 +85,22 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f5fcff"
-  },       BottomText: {
+    backgroundColor: "#BCE0FD"
+  },       
+  BottomText: {
     fontSize: 24,
-    color: 'rgb(236, 3, 255)',
-    lineHeight: 24,
-    textAlign: 'center',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingHorizontal: 10,
+    backgroundColor: 'white',
+    marginTop: 10,
+    borderWidth: 3,
+    borderColor: '#2699FB',
+    marginHorizontal: 5,
   },
-    OverText: {
+  OverText: {
     fontSize: 24,
-    color: 'rgb(0, 255, 235)',
+    color: '#2699FB',
     lineHeight: 24,
     textAlign: 'center',
   },

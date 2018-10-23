@@ -21,10 +21,9 @@ export default class TSystemScreen extends React.Component {
   render() {
     return (
        <View style={styles.container}>
-        <Text>Approve or disable indivdual systems based on play time</Text>
+        <Text style={styles.heading}>Approve or disable indivdual systems based on play time</Text>
 <Svg width={400} height={400} viewBox="0 0 400 400" style={{ width: "100%", height: "auto" }}>
-  <VictoryPie
-         colorScale={"qualitative" }
+  <VictoryPie colorScale={["#4d88ff", "#3377ff", "#1a66ff", "#0055ff"]}
     standalone={false}
     innerRadius={75}
     labelRadius={125}
@@ -39,7 +38,7 @@ export default class TSystemScreen extends React.Component {
                     {
                       mutation: (props) => {
                         return {
-                          style: Object.assign({}, props.style, {fill: 'orange'})
+                          style: Object.assign({}, props.style, {fill: 'white'})
                         }
                       }
                     }, {
@@ -67,7 +66,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f5fcff"
+    backgroundColor: "#BCE0FD",
+  },
+  heading: {
+    fontSize: 24,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingHorizontal: 10,
+    backgroundColor: 'white',
+    marginTop: 10,
+    borderWidth: 3,
+    borderColor: '#2699FB',
+    marginHorizontal: 5,
   }
 });
 

@@ -50,7 +50,9 @@ constructor(props) {
         
         <View style={styles.container}>
 
-
+		<View style={styles.getStartedContainer}>
+            <Text style={styles.topText}>You have spent money on 4 games</Text>
+        </View>
 
   <VictoryChart
     theme={VictoryTheme.material}
@@ -68,7 +70,7 @@ alignment="middle"
   labels={(d) => `$: ${d.y}`}
 
 
-  style={{ labels: { fill: "black" } }}
+  style={{ labels: { fill: "black", fontSize: 12 }, data: { fill: "#2699FB" } }}
   labelComponent={<VictoryLabel dy={-30}/>}
       
     />
@@ -79,10 +81,7 @@ style={{ axis: {stroke: "none"}
   </VictoryChart>
  
         
-         <View style={styles.getStartedContainer}>
-
-            <Text style={styles.BottomText}>{"\n"}{"\n"} You have spent money on 4 games</Text>
-        </View>
+         
             </View>
    
         
@@ -95,7 +94,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#b9caff"
+    backgroundColor: "#BCE0FD"
+  },
+  getStartedContainer: {
+  	marginBottom: 20,
+  	backgroundColor: 'black',
+  	
+  },
+  topText: {
+  	fontSize: 22,
+    backgroundColor: 'white',
+    borderWidth: 3,
+    borderColor: '#2699FB',
+    paddingHorizontal: 5,
+    paddingVertical: 10,
   }
 });
 
