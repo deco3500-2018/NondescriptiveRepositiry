@@ -14,7 +14,7 @@ const sampleData=[
 
 export default class TimScreen extends React.Component {
   static navigationOptions = {
-    title: 'Summary of Tim gaming',
+    title: "Tim's summary",
   };
 
   render() {

@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   getStartedContainer: {
   	marginBottom: 20,
-  	backgroundColor: 'black',
+  	backgroundColor: '#BCE0FD',
   	
   },
   topText: {
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
     borderColor: '#2699FB',
     paddingHorizontal: 5,
     paddingVertical: 10,
+    marginBottom: 30,
   }
 });
 
