@@ -43,7 +43,7 @@ export default class HomeScreen extends React.Component {
             <View style={styles.welcomeContainer}>
             <Image
               source={
-                  require('../assets/images/App-logo.png')
+                  require('../assets/images/mystery.png')
               }
               style={styles.welcomeImage}
             />
@@ -67,6 +67,10 @@ export default class HomeScreen extends React.Component {
         </View>
 
 </View>
+
+
+
+
 
         </ScrollView> 
       </View>

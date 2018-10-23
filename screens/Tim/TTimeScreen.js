@@ -1,61 +1,37 @@
+
+
 import React from 'react';
 import { Button, Text, View, StyleSheet } from 'react-native';
-import { VictoryBar, VictoryChart, VictoryTheme, VictoryArea, VictoryPie, createContainer, VictoryStack} from "victory-native";
-import Svg from 'react-native-svg';
-      
-const day1Data=[
-        
-    {x: "Monday", y: 1 }, 
-    {x: "Tuesday", y: 2}, 
-    {x: "Wednesday", y: 2}, 
-    {x: "Thurday", y: 5}, 
-    {x: "Friday", y: 6}
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryStack, VictoryArea } from "victory-native";
+
     
+    const sampleData=[
+    { x: "Day 1", y: 2 },  { x: "Day 1", y: 5 },
+    { x: "Day 2", y: 3 },  { x: "Day 1", y: 2 },
+    { x: "Day 3", y: 5 },
+    { x: "Day 4", y: 4},
+    { x: "Day 5", y: 6}
   ];
 
 
-const VoronoiContaier = createContainer('voronoi');
-
 export default class TTimeScreen extends React.Component {
+    
+
+
+
   static navigationOptions = {
-    title: 'Tim Time Screen',
+    title: 'Weekly playtime remaining',
   };
 
 
-
-constructor(props) {
-    super(props);
-    this.state = {
-      data1: this.getData1()
-    };
- }
-
-
-  getData1() {
-    return randomData=[
-        
-    {x: "Monday", y: (Math.floor(Math.random() * 10)) }, 
-    {x: "Tuesday", y: (Math.floor(Math.random() * 10))}, 
-    {x: "Wednesday", y: (Math.floor(Math.random() * 10))}, 
-    {x: "Thurday", y: (Math.floor(Math.random() * 10))}, 
-    {x: "Friday", y: (Math.floor(Math.random() * 10))}
-    
-  ]
-  }
-
-
   render() {
-    return (
-         
+      
+      
+    return ( 
         
         <View style={styles.container}>
-         <Button
-          title="View refresh gaming"
-        //doesnt refresh, will be used to filter by time period
-          onPress={() => this.state.data1=this.getData1()}
-        />
-
-        <Text style={styles.BottomText}>{"\n"}{"\n"}Refresh data{"\n"}</Text>
+        
+        <Text style={styles.BottomText}>{"\n"}{"\n"}Your monthly gaming habits average 20 hours of gametime per week{"\n"}</Text>
         
             <VictoryChart
   theme={VictoryTheme.material}
@@ -71,12 +47,12 @@ constructor(props) {
 >
         
   <VictoryBar
-    data={this.state.data1}
+    data={[{x: "Monday", y: 1 }, {x: "Tuesday", y: 2}, {x: "Wednesday", y: 2}, {x: "Thurday", y: 5}, {x: "Friday", y: 6}]}
   />
     
         
   <VictoryBar
-    data={[{x: "Monday", y: 2 }, {x: "Tuesday", y: 8}, {x: "Wednesday", y: 9}, {x: "Thurday", y: 3}, {x: "Friday", y: 1}]}
+    data={[{x: "Monday", y: 3 }, {x: "Tuesday", y: 8}, {x: "Wednesday", y: 9}, {x: "Thurday", y: 3}, {x: "Friday", y: 1}]}
   />
         
         
@@ -97,8 +73,6 @@ constructor(props) {
             <Text style={styles.BottomText}>{"\n"}{"\n"}You <Text style={styles.OverText}>have</Text> exceeded your weekly limit!!{"\n"}</Text>
         </View>
             </View>
-   
-        
     );
   }
 }
@@ -108,7 +82,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#b9caff"
-  }
+    backgroundColor: "#f5fcff"
+  },       BottomText: {
+    fontSize: 24,
+    color: 'rgb(236, 3, 255)',
+    lineHeight: 24,
+    textAlign: 'center',
+  },
+    OverText: {
+    fontSize: 24,
+    color: 'rgb(0, 255, 235)',
+    lineHeight: 24,
+    textAlign: 'center',
+  },
 });
-

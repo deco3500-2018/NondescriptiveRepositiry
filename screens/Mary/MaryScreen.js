@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button, Text, View, StyleSheet } from 'react-native';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryPie } from "victory-native";
-import {
-    Image, Platform, ScrollView, AppRegistry, TouchableOpacity,  } from 'react-native';
+import { Image, Platform, ScrollView, AppRegistry, TouchableOpacity,  } from 'react-native';
 
 const sampleData = [
   { quarter: 1, earnings: 13000 },
@@ -19,18 +18,40 @@ export default class MaryScreen extends React.Component {
   render() {
     return ( 
         
-        
-        <View style={styles.container}>
+              <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-        <View>
+          
         
-          <Text  style={styles.textContainer}>Most played system:                            XBox</Text>
+         <View style={styles.container}>
+       
         
-          <Text  style={styles.textContainer}>Money spent:                                     $20.00</Text>
-        
-          <Text  style={styles.textContainer}>Most played game:                           Fortnite</Text>
+          <View>
+          <Text style={styles.textContainer}>Most played system:                                PC</Text>
+        <View style={styles.buttonContainer}>
+                    <Button
+          title="View Most Played games"
+          onPress={() => this.props.navigation.navigate('MSystem')}
+        />
         </View>
+        
+          <Text style={styles.textContainer}>Money spent:                                     $75.00</Text>
+<View style={styles.buttonContainer}>
+        <Button
+          title="View breakdown by system"
+          onPress={() => this.props.navigation.navigate('MMoney')}
+        />
+        </View>
+        
+          <Text style={styles.textContainer}>Most played game:                             PUBG</Text>
+         <View style={styles.buttonContainer}>
+                    <Button
+          title="View total time played"
+          onPress={() => this.props.navigation.navigate('MTime')} 
+        />
+        </View>
+          </View>
+        
   <VictoryPie
               colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
     events={[{
@@ -62,27 +83,12 @@ export default class MaryScreen extends React.Component {
   />
 
 
-                  <View style={styles.buttonContainer}>
-                    <Button
-          title="View total time played"
-          onPress={() => this.props.navigation.navigate('MTime')}
-        />
-        </View>
-        <View style={styles.buttonContainer}>
-                    <Button 
-          title="View Most Played games"
-          onPress={() => this.props.navigation.navigate('MGame')}
-        />
-        </View>
-        <View style={styles.buttonContainer}>
-        <Button 
-          title="View breakdown by system"
-          onPress={() => this.props.navigation.navigate('MSystem')}
-        />
-        </View>
-        </ScrollView>
-</View>
-      
+                   </View>
+
+
+
+        </ScrollView> 
+      </View>
       
       
     );

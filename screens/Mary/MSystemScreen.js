@@ -16,7 +16,7 @@ const VoronoiContaier = createContainer('voronoi');
 
 export default class MSystemScreen extends React.Component {
   static navigationOptions = {
-    title: 'Detailed Account Information',
+    title: 'Approve Play Hours',
   };
 
   render() {
@@ -29,12 +29,26 @@ export default class MSystemScreen extends React.Component {
     labelRadius={125}
     style={{ labels: { fontSize: 20 }}}
   data={sampleData}
-    animate={{duration: 1500}}
     events={[
       {
         target: "data",
         eventHandlers: {
-           onPressIn: alert
+                           onPressIn: () => {
+                  return [
+                    {
+                      mutation: (props) => {
+                        return {
+                          style: Object.assign({}, props.style, {fill: 'orange'})
+                        }
+                      }
+                    }, {
+                        target: "labels",
+                        mutation: (props) => {
+                            return props.text === "Approved" ?
+                            null : { text: "Approved" }
+                        }
+                    }];
+                }
         }
       }
     ]}
@@ -51,7 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#b9caff"
+    backgroundColor: "#f5fcff"
   }
 });
 

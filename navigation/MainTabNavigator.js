@@ -4,18 +4,16 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import ApprovedDaysScreen from '../screens/ApprovedDaysScreen';
-import RewardScreen from '../screens/RewardScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 import TimScreen from '../screens/Tim/TimScreen';
 import TTimeScreen from '../screens/Tim/TTimeScreen';
-import TGameScreen from '../screens/Tim/TGameScreen';
+import TMoneyScreen from '../screens/Tim/TMoneyScreen';
 import TSystemScreen from '../screens/Tim/TSystemScreen';
 
 import MaryScreen from '../screens/Mary/MaryScreen';
 import MTimeScreen from '../screens/Mary/MTimeScreen';
-import MGameScreen from '../screens/Mary/MGameScreen';
+import MMoneyScreen from '../screens/Mary/MMoneyScreen';
 import MSystemScreen from '../screens/Mary/MSystemScreen';
 
 const HomeStack = createStackNavigator({
@@ -28,7 +26,7 @@ const TimStack = createStackNavigator({
   Home: { screen: TimScreen },
   Time: { screen: TTimeScreen },
   System: { screen: TSystemScreen },
-  Game: { screen: TGameScreen },
+  Money: { screen: TMoneyScreen },
 });
 
 TimStack.navigationOptions = {
@@ -45,7 +43,7 @@ const MaryStack = createStackNavigator({
   Home: { screen: MaryScreen },
   MTime: { screen: MTimeScreen },
   MSystem: { screen: MSystemScreen },
-  MGame: { screen: MGameScreen },
+  MMoney: { screen: MMoneyScreen },
 });
 
 
@@ -73,33 +71,7 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const ApprovedDaysStack = createStackNavigator({
-  ApprovedDaysTracker: ApprovedDaysScreen,
-});
 
-ApprovedDaysStack.navigationOptions = {
-  tabBarLabel: 'PlayDays',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
-    />
-  ),
-};
-
-const RewardStack = createStackNavigator({
-  Reward: RewardScreen,
-});
-
-RewardStack.navigationOptions = {
-  tabBarLabel: 'Reward Center',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
-    />
-  ),
-};
 
 const SettingsStack = createStackNavigator({
   Settings: SettingsScreen,
@@ -117,8 +89,6 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  ApprovedDaysStack,
-  RewardStack,
   TimStack,
   MaryStack,
   SettingsStack,

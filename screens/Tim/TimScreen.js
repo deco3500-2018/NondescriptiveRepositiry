@@ -3,12 +3,14 @@ import { Button, Text, View, StyleSheet } from 'react-native';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryPie } from "victory-native";
 import { Image, Platform, ScrollView, AppRegistry, TouchableOpacity,  } from 'react-native';
 
-const sampleData = [
-  { quarter: 1, earnings: 13000 },
-  { quarter: 2, earnings: 16500 },
-  { quarter: 3, earnings: 14250 },
-  { quarter: 4, earnings: 19000 }
-];
+const sampleData=[
+    { x: "Day 1", y: 2 },
+    { x: "Day 2", y: 3 },
+    { x: "Day 3", y: 5 },
+    { x: "Day 4", y: 4},
+    { x: "Day 5", y: 6},
+    { x: "Remaining", y: 1}
+  ];
 
 export default class TimScreen extends React.Component {
   static navigationOptions = {
@@ -18,16 +20,38 @@ export default class TimScreen extends React.Component {
   render() {
     return ( 
         
-        
-        <View style={styles.container}>
+              <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+
+          
+        
+         <View style={styles.container}>
+       
         
           <View>
           <Text style={styles.textContainer}>Most played system:                                PC</Text>
+        <View style={styles.buttonContainer}>
+                    <Button
+          title="View Most Played system"
+          onPress={() => this.props.navigation.navigate('System')}
+        />
+        </View>
         
           <Text style={styles.textContainer}>Money spent:                                     $75.00</Text>
+<View style={styles.buttonContainer}>
+        <Button
+          title="View breakdown by spending"
+          onPress={() => this.props.navigation.navigate('Money')}
+        />
+        </View>
         
           <Text style={styles.textContainer}>Most played game:                             PUBG</Text>
+         <View style={styles.buttonContainer}>
+                    <Button
+          title="View total time played"
+          onPress={() => this.props.navigation.navigate('Time')} 
+        />
+        </View>
           </View>
         
   <VictoryPie
@@ -53,36 +77,26 @@ export default class TimScreen extends React.Component {
         }
       }
     }]}
-    data={[
-    { x: "Cats", y: 35 },
-    { x: "Dogs", y: 40 },
-    { x: "Birds", y: 55 }
-         ]}
+    data={sampleData}
   />
 
 
-                    <View style={styles.buttonContainer}>
-                    <Button
-          title="View total time played"
-          onPress={() => this.props.navigation.navigate('Time')} 
-        />
-        </View>
-                  <View style={styles.buttonContainer}>
-                    <Button
-          title="View Most Played games"
-          onPress={() => this.props.navigation.navigate('Game')}
-        />
-        </View>
+<VictoryChart
+  theme={VictoryTheme.material}
+  domainPadding={10}
+>
+  <VictoryBar
+    style={{ data: { fill: "#c43a31" } }}
+    data={sampleData}
+  />
+</VictoryChart>
 
-        <View style={styles.buttonContainer}>
-        <Button
-          title="View breakdown by system"
-          onPress={() => this.props.navigation.navigate('System')}
-        />
-        </View>
-    </ScrollView>
-</View>
-      
+                   </View>
+
+
+
+        </ScrollView> 
+      </View>
       
       
     );
