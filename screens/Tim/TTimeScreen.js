@@ -45,7 +45,7 @@ export default class TTimeScreen extends React.Component {
           
         
   <VictoryStack
-  colorScale={["gold", "orange", "tomato",  "cyan"]}
+  colorScale={"heatmap"}
 
 >
         

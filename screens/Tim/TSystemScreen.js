@@ -24,6 +24,7 @@ export default class TSystemScreen extends React.Component {
         <Text>Approve or disable indivdual systems based on play time</Text>
 <Svg width={400} height={400} viewBox="0 0 400 400" style={{ width: "100%", height: "auto" }}>
   <VictoryPie
+         colorScale={"qualitative" }
     standalone={false}
     innerRadius={75}
     labelRadius={125}

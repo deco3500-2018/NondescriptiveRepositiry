@@ -33,7 +33,7 @@ export default class MaryScreen extends React.Component {
         <View style={styles.buttonContainer}>
                     <Button
           title="View Most Played system"
-          onPress={() => this.props.navigation.navigate('System')}
+          onPress={() => this.props.navigation.navigate('MSystem')}
         />
         </View>
         
@@ -41,7 +41,7 @@ export default class MaryScreen extends React.Component {
 <View style={styles.buttonContainer}>
         <Button
           title="View breakdown by spending"
-          onPress={() => this.props.navigation.navigate('Money')}
+          onPress={() => this.props.navigation.navigate('MMoney')}
         />
         </View>
         
@@ -49,7 +49,7 @@ export default class MaryScreen extends React.Component {
          <View style={styles.buttonContainer}>
                     <Button
           title="View total time played"
-          onPress={() => this.props.navigation.navigate('Time')} 
+          onPress={() => this.props.navigation.navigate('MTime')} 
         />
         </View>
           </View>

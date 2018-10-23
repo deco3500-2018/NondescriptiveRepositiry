@@ -59,7 +59,7 @@ export default class TimScreen extends React.Component {
 
 
   <VictoryPie
-              colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
+              colorScale={"["tomato", "orange", "gold", "cyan", "navy" ]"}
     events={[{
       target: "data",
       eventHandlers: {
