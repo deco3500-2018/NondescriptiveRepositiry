@@ -1,233 +1,119 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import { Button, Text, View, StyleSheet, Switch, Linking} from 'react-native';
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryPie } from "victory-native";
+import { Image, Platform, ScrollView, AppRegistry, TouchableOpacity,  } from 'react-native';
 
-import { SectionList, Image, StyleSheet, Text, View } from 'react-native';
-import { Constants } from 'expo';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Options and Settings',
+    title: 'Settings',
   };
+
+state = {
+    refreshValue: true, 
+    notificationValue: true,
+    switchValue: true
+};
+
+_handleToggleSwitch = () => this.setState(state => ({
+    switchValue: !state.switchValue
+}))
+
+
+_handleRefreshToggleSwitch = () => this.setState(state => ({
+    refreshValue: !state.refreshValue
+}))
+
+_handleMaryToggleSwitch = () => this.setState(state => ({
+    maryValue: !state.maryValue
+}))
+
+_handleTimToggleSwitch = () => this.setState(state => ({
+    timValue: !state.timValue
+}))
 
   render() {
-    const { manifest } = Constants;
-    const sections = [
-      { data: [{ value: manifest.sdkVersion }], title: 'sdkVersion' },
-      { data: [{ value: manifest.privacy }], title: 'privacy' },
-      { data: [{ value: manifest.version }], title: 'version' },
-      { data: [{ value: manifest.orientation }], title: 'orientation' },
-      {
-        data: [{ value: manifest.primaryColor, type: 'color' }],
-        title: 'primaryColor',
-      },
-      {
-        data: [{ value: manifest.splash && manifest.splash.image }],
-        title: 'splash.image',
-      },
-      {
-        data: [
-          {
-            value: manifest.splash && manifest.splash.backgroundColor,
-            type: 'color',
-          },
-        ],
-        title: 'splash.backgroundColor',
-      },
-      {
-        data: [
-          {
-            value: manifest.splash && manifest.splash.resizeMode,
-          },
-        ],
-        title: 'splash.resizeMode',
-      },
-      {
-        data: [
-          {
-            value:
-              manifest.ios && manifest.ios.supportsTablet ? 'true' : 'false',
-          },
-        ],
-        title: 'ios.supportsTablet',
-      },
-    ];
+    return ( 
+        
+        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-    return (
-      <SectionList
-        style={styles.container}
-        renderItem={this._renderItem}
-        renderSectionHeader={this._renderSectionHeader}
-        stickySectionHeadersEnabled={true}
-        keyExtractor={(item, index) => index}
-        ListHeaderComponent={ListHeader}
-        sections={sections}
-      />
+          
+        
+         <View style={styles.container}>
+       <Text>Background app refresh</Text>
+       <Switch
+        onValueChange={this._handleRefreshToggleSwitch}
+        value={this.state.refreshValue}
+        />
+        
+        <Text>Notifications</Text>
+       <Switch
+        onValueChange={this._handleToggleSwitch}
+        value={this.state.switchValue}
+        />
+        
+        <Text>Bank accounts linked</Text>
+        <Text>034-182</Text>
+         <Button title="Change Linked Accounts" onPress={ ()=>{ Linking.openURL('https://banking.westpac.com.au/wbc/banking/handler?TAM_OP=login&segment=personal&logout=false')}} /> 
+
+
+        <Text>Children Monitoring</Text>
+         <Text>Mary</Text>
+        
+       <Switch
+        onValueChange={this._handleMaryToggleSwitch}
+        value={this.state.maryValue}
+        />
+        
+         <Text>Tim</Text>
+       <Switch
+        onValueChange={this._handleTimToggleSwitch}
+        value={this.state.timValue}
+        />
+
+
+<Text>Monitor Additional Services</Text>
+         <Button title="Add Steam API" onPress={ ()=>{ Linking.openURL('https://store.steampowered.com/stats/')}} /> 
+ <Button title="Add Xbox API" onPress={ ()=>{ Linking.openURL('https://developer.microsoft.com/en-us/games/xbox/xboxlive')}} /> 
+ <Button title="Add PS4 API" onPress={ ()=>{ Linking.openURL('https://blog.us.playstation.com/2018/03/12/play-time-management-and-other-ps4-tips-for-gaming-families/')}} />
+                   </View>
+
+
+
+        </ScrollView> 
+      
+      
     );
   }
-
-  _renderSectionHeader = ({ section }) => {
-    return <SectionHeader title={section.title} />;
-  };
-
-  _renderItem = ({ item }) => {
-    if (item.type === 'color') {
-      return (
-        <SectionContent>
-          {item.value && <Color value={item.value} />}
-        </SectionContent>
-      );
-    } else {
-      return (
-        <SectionContent>
-          <Text style={styles.sectionContentText}>
-            {item.value}
-          </Text>
-        </SectionContent>
-      );
-    }
-  };
 }
-
-const ListHeader = () => {
-  const { manifest } = Constants;
-
-  return (
-    <View style={styles.titleContainer}>
-      <View style={styles.titleIconContainer}>
-        <AppIconPreview iconUrl={manifest.iconUrl} />
-      </View>
-
-      <View style={styles.titleTextContainer}>
-        <Text style={styles.nameText} numberOfLines={1}>
-          {manifest.name}
-        </Text>
-
-        <Text style={styles.slugText} numberOfLines={1}>
-          {manifest.slug}
-        </Text>
-
-        <Text style={styles.descriptionText}>
-          {manifest.description}
-        </Text>
-      </View>
-    </View>
-  );
-};
-
-const SectionHeader = ({ title }) => {
-  return (
-    <View style={styles.sectionHeaderContainer}>
-      <Text style={styles.sectionHeaderText}>
-        {title}
-      </Text>
-    </View>
-  );
-};
-
-const SectionContent = props => {
-  return (
-    <View style={styles.sectionContentContainer}>
-      {props.children}
-    </View>
-  );
-};
-
-const AppIconPreview = ({ iconUrl }) => {
-  if (!iconUrl) {
-    iconUrl =
-      'https://cdn2.iconfinder.com/data/icons/overwatch-players-icons/512/Overwatch-512.png';
-  }
-
-  return (
-    <Image
-      source={{ uri: iconUrl }}
-      style={{ width: 64, height: 64 }}
-      resizeMode="cover"
-    />
-  );
-};
-
-const Color = ({ value }) => {
-  if (!value) {
-    return <View />;
-  } else {
-    return (
-      <View style={styles.colorContainer}>
-        <View style={[styles.colorPreview, { backgroundColor: value }]} />
-        <View style={styles.colorTextContainer}>
-          <Text style={styles.sectionContentText}>
-            {value}
-          </Text>
-        </View>
-      </View>
-    );
-  }
-};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#BCE0FD",
+  },
+  textContainer: {
+    fontSize: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 5,
+    backgroundColor: 'white',
+    marginTop: 10,
+    borderWidth: 3,
+    borderColor: '#2699FB',
+    marginHorizontal: 5,
+  },
+  contentContainer: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  buttonContainer: {
+    borderWidth: 5,
+    borderColor: '#2699FB',
     backgroundColor: '#fff',
-  },
-  titleContainer: {
-    paddingHorizontal: 15,
-    paddingTop: 15,
-    paddingBottom: 15,
-    flexDirection: 'row',
-  },
-  titleIconContainer: {
-    marginRight: 15,
-    paddingTop: 2,
-  },
-  sectionHeaderContainer: {
-    backgroundColor: '#2699FB',
-    paddingVertical: 8,
-    paddingHorizontal: 15,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#ededed',
-    marginHorizontal: 25,
-  },
-  sectionHeaderText: {
-    fontSize: 14,
-    color: 'white',
-  },
-  sectionContentContainer: {
-    paddingTop: 8,
-    paddingBottom: 12,
-    paddingHorizontal: 15,
-    backgroundColor: '#BCE0FD',
-    marginHorizontal: 25,
-  },
-  sectionContentText: {
-    fontSize: 14,
-  },
-  nameText: {
-    fontWeight: '600',
-    fontSize: 18,
-  },
-  slugText: {
-    color: '#a39f9f',
-    fontSize: 14,
-    backgroundColor: 'transparent',
-  },
-  descriptionText: {
-    fontSize: 14,
-    marginTop: 6,
-    color: '#4d4d4d',
-  },
-  colorContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  colorPreview: {
-    width: 17,
-    height: 17,
-    borderRadius: 2,
-    marginRight: 6,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#ccc',
-  },
-  colorTextContainer: {
-    flex: 1,
+    marginBottom: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+    width: 250,
   },
 });
