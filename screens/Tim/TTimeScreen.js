@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Button, Text, View, StyleSheet } from 'react-native';
-import { VictoryBar, VictoryChart, VictoryTheme, VictoryStack, VictoryArea } from "victory-native";
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryStack, VictoryArea, VictoryLegend } from "victory-native";
 
     
     const sampleData=[
@@ -20,7 +20,7 @@ export default class TTimeScreen extends React.Component {
 
 
   static navigationOptions = {
-    title: 'Weekly playtime remaining',
+    title: 'Indiviudal Game time',
   };
 
 
@@ -31,7 +31,7 @@ export default class TTimeScreen extends React.Component {
         
         <View style={styles.container}>
         
-        <Text style={styles.BottomText}>{"\n"}{"\n"}Your monthly gaming habits average 20 hours of gametime per week{"\n"}</Text>
+        <Text style={styles.BottomText}>{"\n"}{"\n"}Your gaming habits average 7 hours of gametime per game{"\n"}</Text>
         
             <VictoryChart
   theme={VictoryTheme.material}
@@ -41,6 +41,9 @@ export default class TTimeScreen extends React.Component {
   onLoad: { duration: 1000 }
 }}
 >
+        
+          
+        
   <VictoryStack
   colorScale={["gold", "orange", "tomato",  "cyan"]}
 
@@ -70,7 +73,7 @@ export default class TTimeScreen extends React.Component {
         
          <View style={styles.getStartedContainer}>
 
-            <Text style={styles.BottomText}>{"\n"}{"\n"}You <Text style={styles.OverText}>have</Text> exceeded your weekly limit!!{"\n"}</Text>
+            <Text style={styles.BottomText}>{"\n"}{"\n"}Tim played <Text style={styles.OverText}>Overwatch</Text>, Uno, Pokemon and Roblox this week{"\n"}</Text>
         </View>
             </View>
     );

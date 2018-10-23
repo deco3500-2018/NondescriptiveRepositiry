@@ -54,6 +54,10 @@ export default class TimScreen extends React.Component {
         </View>
           </View>
         
+
+ <Text style={styles.textContainer}>Each days play is recorded and displayed below with the amount of time allowed remaning</Text>
+
+
   <VictoryPie
               colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
     events={[{

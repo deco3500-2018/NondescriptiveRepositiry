@@ -4,11 +4,10 @@ import { VictoryBar, VictoryChart, VictoryTheme, VictoryArea, VictoryPie, create
 import Svg from 'react-native-svg';
 
 const sampleData=[
-    { x: "Day 1", y: 2 },
-    { x: "Day 2", y: 3 },
-    { x: "Day 3", y: 5 },
-    { x: "Day 4", y: 4},
-    { x: "Day 5", y: 6}
+    { x: "Mobile", y: 2 },
+    { x: "PS3", y: 1 },
+    { x: "PS4", y: 5 },
+    { x: "CPU", y: 4}
   ];
 
 
@@ -16,12 +15,13 @@ const VoronoiContaier = createContainer('voronoi');
 
 export default class TSystemScreen extends React.Component {
   static navigationOptions = {
-    title: 'Approve Play Hours',
+    title: 'Approve Game Systems',
   };
 
   render() {
     return (
-      
+       <View style={styles.container}>
+        <Text>Approve or disable indivdual systems based on play time</Text>
 <Svg width={400} height={400} viewBox="0 0 400 400" style={{ width: "100%", height: "auto" }}>
   <VictoryPie
     standalone={false}
@@ -44,8 +44,8 @@ export default class TSystemScreen extends React.Component {
                     }, {
                         target: "labels",
                         mutation: (props) => {
-                            return props.text === "Approved" ?
-                            null : { text: "Approved" }
+                            return props.text === "Disabled" ?
+                            null : { text: "Disabled" }
                         }
                     }];
                 }
@@ -54,6 +54,7 @@ export default class TSystemScreen extends React.Component {
     ]}
   />
 </Svg>
+</View>
         
         
     );
