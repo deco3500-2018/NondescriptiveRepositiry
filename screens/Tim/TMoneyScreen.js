@@ -14,6 +14,9 @@ const VoronoiContaier = createContainer('voronoi');
 export default class TMoneyScreen extends React.Component {
   static navigationOptions = {
     title: 'Tim Spending',
+      
+    headerStyle: { backgroundColor: "#2699FB" },
+    headerTitleStyle: { color: 'white' },
   };
 
 
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#BCE0FD"
+    backgroundColor: "#FFF"
   },
   getStartedContainer: {
   	marginBottom: 20,

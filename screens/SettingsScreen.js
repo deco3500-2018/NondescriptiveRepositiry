@@ -7,6 +7,8 @@ import { Image, Platform, ScrollView, AppRegistry, TouchableOpacity,  } from 're
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
     title: 'Settings',
+    headerStyle: { backgroundColor: "#000000" },
+    headerTitleStyle: { color: 'white' },
   };
 
 state = {
@@ -101,7 +103,7 @@ _handleTimToggleSwitch = () => this.setState(state => ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#BCE0FD",
+    backgroundColor: "#FFF",
   },
   textContainer: {
     paddingTop: 10,

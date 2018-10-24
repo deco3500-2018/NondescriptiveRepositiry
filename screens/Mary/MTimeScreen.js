@@ -21,6 +21,9 @@ export default class MTimeScreen extends React.Component {
 
   static navigationOptions = {
     title: 'Indiviudal Game time',
+      
+    headerStyle: { backgroundColor: "#2699FB" },
+    headerTitleStyle: { color: 'white' },
   };
 
 
@@ -72,8 +75,9 @@ export default class MTimeScreen extends React.Component {
  
         
          <View style={styles.getStartedContainer}>
-
-            <Text style={styles.BottomText}>Mary played <Text style={styles.OverText}>Overwatch</Text>, Uno, Pokemon and Roblox this week</Text>
+    <Text>
+        <Text style={styles.BottomText}>Mary played</Text> <Text style={styles.OverText}>Overwatch</Text>, <Text style={styles.UnoText}>Uno</Text>, <Text style={styles.PokemonText}>Pokemon</Text>, and <Text style={styles.RobloxText}>Roblox</Text>
+    </Text>
         </View>
             </View>
     );
@@ -85,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#BCE0FD"
+    backgroundColor: "#FFF"
   },       
   BottomText: {
     fontSize: 24,
@@ -100,7 +104,25 @@ const styles = StyleSheet.create({
   },
   OverText: {
     fontSize: 24,
-    color: '#2699FB',
+    color: '#003366',
+    lineHeight: 24,
+    textAlign: 'center',
+  },
+    UnoText: {
+    fontSize: 24,
+    color: '#0000cd',
+    lineHeight: 24,
+    textAlign: 'center',
+  },
+    PokemonText: {
+    fontSize: 24,
+    color: '#4169e1',
+    lineHeight: 24,
+    textAlign: 'center',
+  },
+    RobloxText: {
+    fontSize: 24,
+    color: '#8470ff',
     lineHeight: 24,
     textAlign: 'center',
   },

@@ -37,6 +37,15 @@ TimStack.navigationOptions = {
       name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
     />
   ),
+
+tabBarOptions: {
+      activeTintColor: 'white',
+      inactiveTintColor: 'grey',
+
+        style: {
+            backgroundColor: '#2699FB',
+        },
+    },
 };
 
 const MaryStack = createStackNavigator({
@@ -55,6 +64,15 @@ MaryStack.navigationOptions = {
       name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
     />
   ),
+
+tabBarOptions: {
+      activeTintColor: 'white',
+      inactiveTintColor: 'grey',
+
+        style: {
+            backgroundColor: '#2699FB',
+        },
+    },
 };
 
 HomeStack.navigationOptions = {
@@ -69,6 +87,15 @@ HomeStack.navigationOptions = {
       }
     />
   ),
+
+tabBarOptions: {
+      activeTintColor: 'white',
+      inactiveTintColor: 'grey',
+
+        style: {
+            backgroundColor: '#2699FB',
+        },
+    },
 };
 
 
@@ -85,6 +112,14 @@ SettingsStack.navigationOptions = {
       name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
     />
   ),
+tabBarOptions: {
+      activeTintColor: 'white',
+      inactiveTintColor: 'grey',
+
+        style: {
+            backgroundColor: '#2699FB',
+        },
+    },
 };
 
 export default createBottomTabNavigator({
@@ -92,4 +127,5 @@ export default createBottomTabNavigator({
   TimStack,
   MaryStack,
   SettingsStack,
+
 });

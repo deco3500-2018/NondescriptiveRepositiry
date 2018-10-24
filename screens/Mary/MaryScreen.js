@@ -15,6 +15,9 @@ const sampleData=[
 export default class MaryScreen extends React.Component {
   static navigationOptions = {
     title: "Mary's summary",
+      
+    headerStyle: { backgroundColor: "#2699FB" },
+    headerTitleStyle: { color: 'white' },
   };
 
   render() {
@@ -83,15 +86,6 @@ export default class MaryScreen extends React.Component {
   />
 
 
-<VictoryChart
-  theme={VictoryTheme.material}
-  domainPadding={10}
->
-  <VictoryBar
-    style={{ data: { fill: "#2699FB" } }}
-    data={sampleData}
-  />
-</VictoryChart>
 
                    </View>
 
@@ -108,7 +102,7 @@ export default class MaryScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#BCE0FD",
+    backgroundColor: "#FFF",
   },
   textContainer: {
     fontSize: 20,

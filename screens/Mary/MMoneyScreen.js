@@ -14,6 +14,9 @@ const VoronoiContaier = createContainer('voronoi');
 export default class MMoneyScreen extends React.Component {
   static navigationOptions = {
     title: "Mary's Spending",
+      
+    headerStyle: { backgroundColor: "#2699FB" },
+    headerTitleStyle: { color: 'white' },
   };
 
 
@@ -95,7 +98,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#b9caff",
+    backgroundColor: "#FFF",
   },
   topText: {
     fontSize: 22,
