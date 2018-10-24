@@ -9,7 +9,7 @@ const sampleData=[
     { x: "Day 3", y: 5 },
     { x: "Day 4", y: 4},
     { x: "Day 5", y: 6},
-    { x: "Remaining", y: 1}
+    { x: "Remaining", y: 10}
   ];
 
 export default class MaryScreen extends React.Component {
@@ -57,7 +57,7 @@ export default class MaryScreen extends React.Component {
 
  <Text style={styles.textContainer}>Each days play is recorded and displayed below with the amount of time allowed remaning</Text>
   <VictoryPie
-              colorScale={["#4d88ff", "#3377ff", "#1a66ff", "#0055ff", "#004de6" ]}
+             colorScale={["#ea4dff", "#8118db", "#1b9bde", "#6387ce", "#42f5c5", "#e7f542" ]}
     events={[{
       target: "data",
       eventHandlers: {

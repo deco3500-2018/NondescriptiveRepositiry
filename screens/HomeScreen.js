@@ -43,7 +43,7 @@ export default class HomeScreen extends React.Component {
             <View style={styles.welcomeContainer}>
             <Image
               source={
-                  require('../assets/images/App-logo.png')
+                  require('../assets/images/AppLogo.png')
               }
               style={styles.welcomeImage}
             />
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
       titleText: {
-    fontSize: 40,
+    fontSize: 30,
     color: 'white',
     lineHeight: 24,
     textAlign: 'center',
