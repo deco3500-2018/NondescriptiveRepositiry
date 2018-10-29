@@ -4,7 +4,7 @@ Checkout our proposal [here](https://github.com/deco3500-2018/NondescriptiveRepo
 ## The Team
 
 - Kyle Pettigrew s439536@student.uq.edu.au
-- XX 
+- Scott Phillips S4431673@student.uq.edu.au
 - XX
 - XX
 - XX
