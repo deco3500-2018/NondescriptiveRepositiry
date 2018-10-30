@@ -9,7 +9,7 @@
 - Kyle Pettigrew s439536@student.uq.edu.au
 - Scott Phillips S4431673@student.uq.edu.au
 - Duy Anh Le (Joe) s4340673@student.uq.edu.au
-- XX
+- Zachary Clark s4437026@student.uq.edu.au
 - XX
 - XX
 - XX
