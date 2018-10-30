@@ -10,9 +10,7 @@
 - Scott Phillips S4431673@student.uq.edu.au
 - Duy Anh Le (Joe) s4340673@student.uq.edu.au
 - Zachary Clark s4437026@student.uq.edu.au
-- XX
-- XX
-- XX
+- Adam Roe s4430878@student.uq.edu.au
 
 ## Project Overview
 This project tackles the problem space of gaming addiction in young adults and children, initally our idea for the problem space was to create a system or application which allowed parents to set tasks and goals for their kids to complete which in turn would allow them time to play there games depending on the difficulty or time it took to complete the chore or task. Through user testing and research this idea was refined to an application that is tailored to displaying complex information about gaming behaviour to parents via use of carefully crafted graphs.  
