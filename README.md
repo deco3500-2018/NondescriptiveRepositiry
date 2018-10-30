@@ -16,7 +16,12 @@ Checkout our proposal [here](https://github.com/deco3500-2018/NondescriptiveRepo
 
 ## Documentation and Process Information/Links
 
-LINKS TO PAGES HERE
+1. [Design Process](https://github.com/deco3500-2018/NondescriptiveRepositiry/wiki/Design-Process-Overview)
+2. [Concept Proposal](https://github.com/deco3500-2018/NondescriptiveRepositiry/wiki/Proposal)
+3. [Prototype Link](https://expo.io/@kpmate/GamerWatch)
+4. [Protoype Functionality and Styling](https://github.com/deco3500-2018/NondescriptiveRepositiry/wiki/Prototype)
+5. [User Research and Testing](https://github.com/deco3500-2018/NondescriptiveRepositiry/wiki/User-Research-data-&-Testing-Results)
+6. [Academic Research](https://github.com/deco3500-2018/NondescriptiveRepositiry/wiki/Academic-Research)
 
 
 ## Deployment Guide and Usage Instructions
@@ -60,7 +65,7 @@ To test the application without any modifications or need to download the source
 3. You can now visit your application from the url expo posted in the CLI that is hosted externally as well as via your local server.
 
 ## Extras
-Poster
+<img src="https://camo.githubusercontent.com/e6ec27d5aecb2f884220376c92e0453160c76863/68747470733a2f2f692e696d6775722e636f6d2f6a4d49586374652e706e67"/>
 
 
 ## Technology used
@@ -69,7 +74,7 @@ Poster
 React Native was used as the backbone of the application to allow for the mobile app to be built using only javascript whilst still maintating cross platform compatibility and rich mobile UI features. More information on this technology can be found [here](https://facebook.github.io/react-native/).
 
 ### Victory Native
-Victory Native was used to visualise the data supplied to the application in meaniningful ways to the user. Currently the main forms of graphs implemented are pie charts, bar charts, and stacked graphs.
+Victory Native was used to visualise the data supplied to the application in meaniningful ways to the user. Currently the main forms of graphs implemented are pie charts, bar charts, and stacked graphs. The github for victory native can be found [here](https://github.com/FormidableLabs/victory-native)
 
 
 
