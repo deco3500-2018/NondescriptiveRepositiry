@@ -1,5 +1,8 @@
 # The NondescriptiveRepositiry
-Checkout our proposal [here](https://github.com/deco3500-2018/NondescriptiveRepositiry/wiki/Proposal)
+
+<img src="https://camo.githubusercontent.com/e6ec27d5aecb2f884220376c92e0453160c76863/68747470733a2f2f692e696d6775722e636f6d2f6a4d49586374652e706e67"/>
+
+
 
 ## The Team
 
@@ -12,6 +15,7 @@ Checkout our proposal [here](https://github.com/deco3500-2018/NondescriptiveRepo
 - XX
 
 ## Project Overview
+This project tackles the problem space of gaming addiction in young adults and children, initally our idea for the problem space was to create a system or application which allowed parents to set tasks and goals for their kids to complete which in turn would allow them time to play there games depending on the difficulty or time it took to complete the chore or task. Through user testing and research this idea was refined to an application that is tailored to displaying complex information about gaming behaviour to parents via use of carefully crafted graphs.  
 
 
 ## Documentation and Process Information/Links
@@ -64,8 +68,6 @@ To test the application without any modifications or need to download the source
 
 3. You can now visit your application from the url expo posted in the CLI that is hosted externally as well as via your local server.
 
-## Extras
-<img src="https://camo.githubusercontent.com/e6ec27d5aecb2f884220376c92e0453160c76863/68747470733a2f2f692e696d6775722e636f6d2f6a4d49586374652e706e67"/>
 
 
 ## Technology used
