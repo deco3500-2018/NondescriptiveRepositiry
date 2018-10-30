@@ -49,7 +49,7 @@ Download or clone the repo onto your local system
 An excellent guide on how to enable native emulation when developing the application follow the [link](https://facebook.github.io/react-native/docs/getting-started.html)
 
 ##### Start development server
-type npm start in your cli and then navigate to it via your Expo phone app
+type npm start in your cli and then navigate to it via your Expo phone app, any changes you make to the source code while the server is running will automatically be pushed to devices running from the server.
 
 ##### Trouble shooting 
 If any errors occur you can seek help at
